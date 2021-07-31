@@ -50,7 +50,7 @@ const renderRoutes = function () {
      <Feature />
    )}/> */}
    <Route path="/scall" render={props =>(
-     <ScheduleCall />
+     <ScheduleCall/>
    )}/> 
   </Switch>;
 };
