@@ -38,10 +38,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function ButtonComponent({ className, title, ...rest }) {
+function ButtonComponent({ className, title, href, ...rest }) {
   const classes = useStyles();
   return (
-    <Button className={clsx(classes.btn, className)} {...rest}>
+    <Button className={clsx(classes.btn, className)} href={href} {...rest}>
       {title}
     </Button>
   );
