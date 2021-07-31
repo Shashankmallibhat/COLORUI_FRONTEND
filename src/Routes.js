@@ -27,7 +27,6 @@ const renderRoutes = function () {
     />
     <Route
       path="/schedulecall"
-      exact
       render={props => (
         <>
           <ScrollReset />
@@ -37,10 +36,10 @@ const renderRoutes = function () {
         </>
       )}
     />
-   <Route path="/signin" exact render={props =>(
+   <Route path="/signin"  render={props =>(
      <SignIn />
    )}/>  
-   <Route path="/signup" exact render={props =>(
+   <Route path="/signup"  render={props =>(
      <SignUP />
    )}/> 
     {/* pending pending */}
@@ -50,7 +49,7 @@ const renderRoutes = function () {
    <Route path="/about" exact render={props =>(
      <Feature />
    )}/> */}
-   <Route path="/scall" exact render={props =>(
+   <Route path="/scall" render={props =>(
      <ScheduleCall />
    )}/> 
   </Switch>;
