@@ -2,8 +2,9 @@ import React from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
 import { CssBaseline } from "@material-ui/core";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faLayerGroup} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles(() => ({
   container: {
     margin: "0",
@@ -55,12 +56,16 @@ const useStyles = makeStyles(() => ({
     width: "500px",
     margin: "25px",
   },
-  layericon:{
+  layericon: {
     color: "#fff",
     height: "400px",
     width: "400px",
-    fontSize: "14rem"
-  }
+    fontSize: "14rem",
+  },
+  links: {
+    textDecoration: "none",
+    color: "inherit",
+  },
 }));
 
 function Feature({ className, ...rest }) {
@@ -78,14 +83,19 @@ function Feature({ className, ...rest }) {
         >
           <Grid item xs={4} className={classes.icon}>
             <div>
-              <FontAwesomeIcon icon= {faLayerGroup} className={classes.layericon}/>
+              <FontAwesomeIcon
+                icon={faLayerGroup}
+                className={classes.layericon}
+              />
             </div>
           </Grid>
           <Grid item xs={4} className={classes.text}>
             <h1>What can we do for you?</h1>
             <h2>We help you to get awesome Colors</h2>
             <p>Schedule a call learn more about our services</p>
-            <ButtonComponent title="Schedeule Call" href="/scall"/>
+            <Link to="/scall" className={classes.links}>
+              <ButtonComponent title="Schedeule Call"/>
+            </Link>
           </Grid>
         </Grid>
       </Container>

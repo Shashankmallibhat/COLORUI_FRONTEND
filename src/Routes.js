@@ -25,22 +25,11 @@ const renderRoutes = function () {
         </>
       )}
     />
-    <Route
-      path="/schedulecall"
-      render={props => (
-        <>
-          <ScrollReset />
-          <MainLayout>
-            <ScheduleCall {...props}/>
-          </MainLayout>
-        </>
-      )}
-    />
    <Route path="/signin"  render={props =>(
-     <SignIn />
+     <SignIn {...props}/>
    )}/>  
    <Route path="/signup"  render={props =>(
-     <SignUP />
+     <SignUP {...props}/>
    )}/> 
     {/* pending pending */}
    {/* <Route path="/services" exact render={props =>(
@@ -50,7 +39,7 @@ const renderRoutes = function () {
      <Feature />
    )}/> */}
    <Route path="/scall" render={props =>(
-     <ScheduleCall/>
+     <ScheduleCall {...props}/>
    )}/> 
   </Switch>;
 };

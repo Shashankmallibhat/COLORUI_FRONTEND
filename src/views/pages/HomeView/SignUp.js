@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
 import { CssBaseline } from "@material-ui/core";
-import clsx from 'clsx';
+import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers} from '@fortawesome/free-solid-svg-icons'
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -61,12 +62,16 @@ const useStyles = makeStyles(() => ({
     width: "600px",
     margin: "25px",
   },
-  usericon:{
+  usericon: {
     color: "#fff",
     fontSize: "14rem",
     height: "400px",
-    width: "400px"
-  }
+    width: "400px",
+  },
+  links: {
+    textDecoration: "none",
+    color: "inherit",
+  },
 }));
 
 function SignUp({ className, ...rest }) {
@@ -82,16 +87,18 @@ function SignUp({ className, ...rest }) {
           alignItems="center"
           spacing="4"
         >
-          <Grid item xs={6} className={clsx(classes.text,classes.root)}>
+          <Grid item xs={6} className={clsx(classes.text, classes.root)}>
             <h1>Join Our Team</h1>
             <h2>Sign Up Today</h2>
             <p>See what makes us different</p>
-            <ButtonComponent title="Sign Up" href="signin"/>
+            <Link to="/signup" className={classes.links}>
+              <ButtonComponent title="Sign Up" />
+            </Link>
           </Grid>
           <Grid item xs={5} className={classes.icon}>
             <div>
-              <FontAwesomeIcon icon = {faUsers} className={classes.usericon}/>
-            </div> 
+              <FontAwesomeIcon icon={faUsers} className={classes.usericon} />
+            </div>
           </Grid>
         </Grid>
       </Container>
