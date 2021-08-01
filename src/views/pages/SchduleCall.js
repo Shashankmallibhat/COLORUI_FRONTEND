@@ -34,7 +34,7 @@ const CssTextField = withStyles({
     "& .MuiInputBase-root": {
       color: "#fefefe",
     },
-    "& .PrivateNotchedOutline-legendLabelled-16": {
+    "& .PrivateNotchedOutline-legendLabelled-59": {
       fontSize: "0.6em",
     },
   },
@@ -118,15 +118,8 @@ function ScheduleCall() {
       Email: email,
       Help: help,
     };
-    // console.log(data);
-    data = JSON.stringify({
-      Name: name,
-      phone_number: phoneNumber,
-      Email: email,
-      Help: help,
-    });
     instance
-      .post("http://localhost:5000/submit/", data)
+      .post(process.env.REACT_APP_SERVER_URL, data)
       .then((response) => {
         console.log(response);
       })
