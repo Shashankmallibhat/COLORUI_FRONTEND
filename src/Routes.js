@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import ScrollReset from "./components/ScrollReset";
 import MainLayout from "./layouts/MainLayout";
 import Footer from "./layouts/MainLayout/Footer";
-import Colors from "./views/pages/Colors";
+// import Colors from "./views/pages/Colors";
 import HomeView from "./views/pages/HomeView";
 import Feature from "./views/pages/HomeView/Feature";
 import Services from "./views/pages/HomeView/Services";
@@ -51,7 +51,7 @@ const renderRoutes = function () {
         )}
       />
       <Route path="/scall" render={(props) => <ScheduleCall {...props} />} />
-      <Route path="/colors" render={(props) => <Colors {...props} />} />
+      {/* <Route path="/colors" render={(props) => <Colors {...props} />} /> */}
     </Switch>
   );
 };
