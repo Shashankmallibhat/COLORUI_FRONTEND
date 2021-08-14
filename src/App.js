@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   createMuiTheme,
   createStyles,
@@ -9,7 +10,6 @@ import { createBrowserHistory } from "history";
 import ScrollReset from "./components/ScrollReset";
 import Routes from "./Routes";
 import { CssBaseline } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
 import { firebase } from "./utils/firebase";
 
 let UserContext = React.createContext();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -14,6 +14,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import { Link as RouterLink } from "react-router-dom";
 import { Hidden } from "@material-ui/core";
 import { firebase } from "../../../utils/firebase";
+import { UserContext } from "../../../App";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -89,7 +90,7 @@ export default function NavBar() {
   // const pathname = window.location.pathname;
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+  let { user } = useContext(UserContext);
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -132,9 +133,11 @@ export default function NavBar() {
           Sign In
         </MenuItem>
       </Link>
+      {user?
       <MenuItem onClick={handleLogout} className={classes.menus}>
         Logout
       </MenuItem>
+      :<></>}
     </Menu>
   );
 

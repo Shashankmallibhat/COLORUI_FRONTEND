@@ -91,7 +91,7 @@ function SignUp({ className, ...rest }) {
             <h1>Join Our Team</h1>
             <h2>Sign Up Today</h2>
             <p>See what makes us different</p>
-            <Link to="/signup" className={classes.links}>
+            <Link to="/signin" className={classes.links}>
               <ButtonComponent title="Sign Up" />
             </Link>
           </Grid>
