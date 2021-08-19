@@ -5,16 +5,18 @@ import { CssBaseline } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     margin: "0",
     background: "#131313",
-    height: "100vh",
     minWidth: "100vw",
     position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.up("md")]: {
+      height: "100vh",
+    },
   },
   text: {
     color: "#fff",
@@ -29,6 +31,17 @@ const useStyles = makeStyles(() => ({
       MozTextFillColor: "transparent",
       textTransform: "uppercase",
       marginBottom: "13px",
+      [theme.breakpoints.down("md")]: {
+        fontSize: "1.8rem",
+        margin: "0",
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.65rem",
+        margin: "0",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.5rem",
+      },
     },
     "& h2": {
       fontSize: "3rem",
@@ -39,11 +52,49 @@ const useStyles = makeStyles(() => ({
       MozBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       MozTextFillColor: "transparent",
+      [theme.breakpoints.down("md")]: {
+        fontSize: "2.5rem",
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "2.4rem",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "2.3rem",
+      },
+      [theme.breakpoints.between("xs", "sm")]: {
+        lineHeight: "50px",
+      },
     },
     "& p": {
       marginTop: "1rem",
       fontSize: "2rem",
       fontWeight: "700",
+      [theme.breakpoints.down("md")]: {
+        fontSize: "1.8rem",
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.65rem",
+        margin: "0",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.5rem",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+      flex: "1",
+    },
+  },
+  btn: {
+    [theme.breakpoints.down("md")]: {
+      height: "10vh",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin: "1rem 0",
+      height: "8vh",
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: "3rem 0",
     },
   },
   icon: {
@@ -55,16 +106,47 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     width: "500px",
     margin: "25px",
+    [theme.breakpoints.down("sm")]: {
+      height: "50vh",
+      margin: "4rem 0",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40vh",
+      margin: "4rem 4rem 1rem 0",
+      flexBasis: "0",
+    },
   },
   layericon: {
     color: "#fff",
     height: "400px",
     width: "400px",
     fontSize: "14rem",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "8rem",
+    },
   },
   links: {
     textDecoration: "none",
     color: "inherit",
+  },
+  gridContainer: {
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+      "& .MuiGrid-grid-xs-4": {
+        maxWidth: "400px",
+      },
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: "2rem",
+      "& .MuiGrid-grid-xs-4": {
+        maxWidth: "320px",
+        marginRight: "1rem",
+      },
+    },
   },
 }));
 
@@ -80,6 +162,7 @@ function Feature({ className, ...rest }) {
           justify="center"
           alignItems="center"
           spacing="3"
+          className={classes.gridContainer}
         >
           <Grid item xs={4} className={classes.icon}>
             <div>
@@ -92,9 +175,9 @@ function Feature({ className, ...rest }) {
           <Grid item xs={4} className={classes.text}>
             <h1>What can we do for you?</h1>
             <h2>We help you to get awesome Colors</h2>
-            <p>Schedule a call learn more about our services</p>
+            <p>Schedule a call learn to more about our services</p>
             <Link to="/scall" className={classes.links}>
-              <ButtonComponent title="Schedeule Call"/>
+              <ButtonComponent title="Schedeule Call" className={classes.btn} />
             </Link>
           </Grid>
         </Grid>

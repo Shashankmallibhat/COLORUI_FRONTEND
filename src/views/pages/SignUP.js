@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     alignItems: "center",
     minWidth: "100vw",
-    minHeight: "100vh",
+    // minHeight: "100vh",
     background: "linear-gradient(to right, #161616, #000000)",
   },
   formBox: {
@@ -56,9 +56,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "0",
     background: "linear-gradient(to right, #161616, #000000)",
     width: "100vw",
-    minHeight: "100vh",
-    top: "-44px",
-    position: "relative",
   },
   feilds: {
     width: "44vw",
@@ -66,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "3px",
     margin: "7px 0",
     fontSize: "24px",
+    [theme.breakpoints.down("xs")]: {
+      width: "60vw",
+    },
   },
   heading: {
     fontSize: "50px",
@@ -90,12 +90,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
   },
   signintext: {
-    position: "relative",
-    top: "-7em",
-    left: "31em",
-    '& a':{
-        color: "#fff", textDecoration: "none"
-    }
+    display: "flex",
+    justifyContent: "center",
+    "& a": {
+      color: "#fff",
+      textDecoration: "none",
+    },
   },
 }));
 
@@ -108,7 +108,7 @@ function SignUP() {
         style={{
           background: "linear-gradient(to right, #161616, #000000)",
           overflow: "hidden scroll",
-          height: "100vh",
+          height: "90vh",
         }}
       >
         <div
@@ -116,8 +116,7 @@ function SignUP() {
             background: "linear-gradient(to right, #161616, #000000)",
             margin: "0",
             zIndex: 3,
-            top: "37px",
-            position: "relative",
+            marginBottom: "10px",
           }}
         >
           <h1 className={classes.heading}>Sign Up</h1>
@@ -132,6 +131,7 @@ function SignUP() {
               label="Enter Your Name"
               variant="outlined"
               className={classes.feilds}
+              style={{ top: "0.5rem" }}
             />
             <CssTextField
               label="Enter Your Age"
@@ -160,9 +160,11 @@ function SignUP() {
               }}
             />
           </div>
-          <h2 className={classes.signintext}><a href="signin">Have an account already?</a></h2>
+          <h2 className={classes.signintext}>
+            <a href="signin">Have an account already?</a>
+          </h2>
         </form>
-        <div style={{ position: "relative", top: "-66px" }}>
+        <div>
           <Footer />
         </div>
       </div>

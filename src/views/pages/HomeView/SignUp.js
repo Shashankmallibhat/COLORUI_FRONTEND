@@ -2,25 +2,25 @@ import React from "react";
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
 import { CssBaseline } from "@material-ui/core";
-import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    position: "relative",
-    left: "5rem",
-  },
+const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: "#131313",
-    padding: "10rem",
-    height: "100vh",
+    padding: "8rem",
     minWidth: "100vw",
     position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    [theme.breakpoints.up("sm")]: {
+      padding: "4rem",
+    },
+    [theme.breakpoints.up("xs")]: {
+      padding: "2rem 0",
+    },
   },
   text: {
     color: "#fff",
@@ -35,6 +35,16 @@ const useStyles = makeStyles(() => ({
       MozTextFillColor: "transparent",
       textTransform: "uppercase",
       marginBottom: "13px",
+      [theme.breakpoints.down("md")]: {
+        margin: "0",
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.65rem",
+        margin: "0",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.5rem",
+      },
     },
     "& h2": {
       fontSize: "3rem",
@@ -45,11 +55,30 @@ const useStyles = makeStyles(() => ({
       MozBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       MozTextFillColor: "transparent",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "2.4rem",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "2.3rem",
+      },
     },
     "& p": {
       marginTop: "1rem",
       fontSize: "2rem",
       fontWeight: "700",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.65rem",
+        margin: "0",
+      },
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.5rem",
+      },
+    },
+    [theme.breakpoints.down("md")]: {
+      flexBasis: "36%",
+    },
+    [theme.breakpoints.down("lg")]: {
+      flexBasis: "36%",
     },
   },
   icon: {
@@ -61,16 +90,58 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     width: "600px",
     margin: "25px",
+    flexBasis: "0",
+    [theme.breakpoints.down("sm")]: {
+      height: "50vh",
+      margin: "4rem 0",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40vh",
+      margin: "4rem 4rem 1rem 0rem",
+      flexBasis: "0",
+    },
   },
-  usericon: {
+  userIcon: {
     color: "#fff",
     fontSize: "14rem",
     height: "400px",
     width: "400px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "10rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "8rem",
+    },
   },
   links: {
     textDecoration: "none",
     color: "inherit",
+  },
+  gridContainer: {
+    [theme.breakpoints.down("sm")]: {
+      "& .MuiGrid-grid-xs-5": {
+        maxWidth: "400px",
+      },
+      display: "flex",
+      flexDirection: "column-reverse",
+    },
+    [theme.breakpoints.down("xs")]: {
+      display: "flex",
+      flexDirection: "column-reverse",
+      margin: "2rem",
+      "& .MuiGrid-grid-xs-5": {
+        maxWidth: "318px",
+        marginRight: "0",
+        flexBasis: "0",
+      },
+      "& .MuiGrid-grid-xs-6": {
+        maxWidth: "unset",
+        flexBasis: "0",
+      },
+    },
   },
 }));
 
@@ -86,8 +157,9 @@ function SignUp({ className, ...rest }) {
           justify="center"
           alignItems="center"
           spacing="4"
+          className={classes.gridContainer}
         >
-          <Grid item xs={6} className={clsx(classes.text, classes.root)}>
+          <Grid item xs={6} className={classes.text}>
             <h1>Join Our Team</h1>
             <h2>Sign Up Today</h2>
             <p>See what makes us different</p>
@@ -97,7 +169,7 @@ function SignUp({ className, ...rest }) {
           </Grid>
           <Grid item xs={5} className={classes.icon}>
             <div>
-              <FontAwesomeIcon icon={faUsers} className={classes.usericon} />
+              <FontAwesomeIcon icon={faUsers} className={classes.userIcon} />
             </div>
           </Grid>
         </Grid>

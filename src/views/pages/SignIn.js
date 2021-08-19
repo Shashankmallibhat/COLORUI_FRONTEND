@@ -70,8 +70,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "0",
     background: "linear-gradient(to right, #161616, #000000)",
     width: "100vw",
-    minHeight: "100vh",
-    top: "-150px",
     position: "relative",
   },
   feilds: {
@@ -80,6 +78,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "3px",
     margin: "7px 0",
     fontSize: "24px",
+    [theme.breakpoints.down("sm")]: {
+      width: "35vw",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "62vw",
+    },
   },
   heading: {
     fontSize: "50px",
@@ -105,8 +109,8 @@ const useStyles = makeStyles((theme) => ({
   },
   signuptext: {
     position: "relative",
-    top: "-17em",
-    left: "31.56em",
+    display: "flex",
+    justifyContent: "center",
     "& a": {
       color: "#fff",
       textDecoration: "none",
@@ -176,7 +180,7 @@ function Log() {
       <Login open={open} onClose={handleClose} />
     </div>
   ) : (
-    <div></div>   //just remove the button on login or else it will show up since Log function is outside the if function down
+    <div></div> //just remove the button on login or else it will show up since Log function is outside the if function down
   );
 }
 function SignIn() {
@@ -193,18 +197,6 @@ function SignIn() {
           height: "100vh",
         }}
       >
-        <h2
-          style={{
-            color: "#fff",
-            position: "relative",
-            top: "7.4em",
-            left: "42.4em",
-            zIndex: "12",
-            display: "flex",
-          }}
-        >
-          {Log()}
-        </h2>
         {user ? (
           <>
             <h1
@@ -224,7 +216,7 @@ function SignIn() {
               You have logged in already
             </h1>
             <div style={{ position: "relative", top: "10rem" }}>
-            <Footer/>
+              <Footer />
             </div>
           </>
         ) : (
@@ -234,7 +226,6 @@ function SignIn() {
                 background: "linear-gradient(to right, #161616, #000000)",
                 margin: "0",
                 zIndex: 3,
-                top: "37px",
                 position: "relative",
               }}
             >
@@ -244,20 +235,19 @@ function SignIn() {
               style={{
                 color: "#fff",
                 position: "relative",
-                top: "1em",
-                left: "30.8em",
                 zIndex: "10",
                 display: "flex",
+                justifyContent: "center",
               }}
             >
-              Login with google or phone
+              Login with google or phone {Log()}
             </h2>
             <h3
               style={{
                 color: "#fff",
                 position: "relative",
-                top: "2em",
-                left: "43em",
+                display: "flex",
+                justifyContent: "center",
                 zIndex: "10",
               }}
             >
@@ -291,7 +281,7 @@ function SignIn() {
               </h2>
             </form>
             <div style={{ position: "relative", top: "-100px" }}>
-            <Footer />
+              <Footer />
             </div>
           </>
         )}
