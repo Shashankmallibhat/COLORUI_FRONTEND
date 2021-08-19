@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(to right, #161616, #000000)",
     width: "100vw",
     minHeight: "100vh",
-    top: "-44px",
     position: "relative",
   },
   feilds: {

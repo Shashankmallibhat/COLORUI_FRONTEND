@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, CssBaseline, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,34 +13,48 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     minWidth: "100vw",
     height: "100vh",
-    display: "flex",  
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
   desc1: {
-    fontSize: "100px",
-    marginBottom: "24px",
     color: "#fff",
     position: "relative",
     top: "-0.7em",
+    fontSize: "100px",
+    marginBottom: "24px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "90px",
+      marginBottom: "0",
+      top: "-21px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "70px",
+    },
   },
   highlight: {
+    position: "relative",
+    top: "-0.7em",
     fontSize: "100px",
     marginBottom: "24px",
     marginLeft: "16px",
-    position: "relative",
-    top: "-0.7em",
-    // background: "##ee0979", 
+    // background: "##ee0979",
     // background: "-webkit-linear-gradient(to right #ff6a00, #ee0979) ",
     background: "linear-gradient(to right,#ff6a00,#ee0979)",
     WebkitBackgroundClip: "text",
     MozBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "90px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "70px",
+    },
   },
   desc2: {
     fontSize: "68px",
-    // background: "#da22ff", 
+    // background: "#da22ff",
     // background: "-webkit-linear-gradient(to right,#9114ff,#da22ff) ",
     background: "linear-gradient(to right,#8f0eff,#da22ff) ",
     WebkitBackgroundClip: "text",
@@ -48,29 +63,60 @@ const useStyles = makeStyles((theme) => ({
     MozTextFillColor: "transparent",
     position: "relative",
     top: "-1.3em",
-    right: "-1.4em"
+    right: "-1.4em",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "70px",
+      left: "0",
+      textAlign: "center",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "50px",
+    },
+  },
+  btn: {
+    top: "-2em",
+    right: "-9.5em",
+    [theme.breakpoints.down("sm")]: {
+      right: "-12rem",
+      top: "-5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "150px",
+      right: "-100px",
+    },
+  },
+  main: {
+    display: "flex",
+    flexDirection: "row",
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      textAlign: "center",
+    },
   },
 }));
 function Hero({ className, ...rest }) {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <div>
-      <CssBaseline/>
+      <CssBaseline />
       <Container className={classes.container1}>
         <Box>
-          <div style={{
-              display: "flex",
-              flexDirection: "row",
-            }}>
-            <h1 className={classes.desc1} >Choose your</h1>
+          <div className={classes.main}>
+            <h1 className={classes.desc1}>Choose your</h1>
             <h1 className={classes.highlight}>Colors</h1>
           </div>
           <div>
             <p className={classes.desc2}>Unlimited Possibilites</p>
           </div>
-          <ButtonComponent title="Explore" style={{
-          top: "-2em",
-          right: "-9.5em"}}/>
+          <ButtonComponent
+            title="Explore"
+            className={classes.btn}
+            onClick={() => {
+              history.push("/services");
+            }}
+          />
         </Box>
       </Container>
     </div>
