@@ -79,8 +79,8 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     textDecoration: "none",
-    color: "#fff"
-  }
+    color: "#fff",
+  },
 }));
 
 export default function NavBar() {
@@ -133,14 +133,16 @@ export default function NavBar() {
           Sign In
         </MenuItem>
       </Link>
-      {user?
-      <MenuItem onClick={handleLogout} className={classes.menus}>
-        Logout
-      </MenuItem>
-      :<></>}
+      {user ? (
+        <MenuItem onClick={handleLogout} className={classes.menus}>
+          Logout
+        </MenuItem>
+      ) : (
+        <></>
+      )}
     </Menu>
   );
-
+//still one error exists
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -151,16 +153,23 @@ export default function NavBar() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      className={classes.root}
     >
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <p>Home</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <p>About</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <p>Services</p>
-      </MenuItem>
+      <Link to="/" className={classes.links}>
+        <MenuItem onClick={handleProfileMenuOpen}>
+          <p>Home</p>
+        </MenuItem>
+      </Link>
+      <Link to="/about" className={classes.links}>
+        <MenuItem onClick={handleProfileMenuOpen}>
+          <p>About</p>
+        </MenuItem>
+      </Link>
+      <Link to="/services" className={classes.links}>
+        <MenuItem onClick={handleProfileMenuOpen}>
+          <p>Services</p>
+        </MenuItem>
+      </Link>
     </Menu>
   );
   const drawerItemList = () => (
