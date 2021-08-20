@@ -1,11 +1,11 @@
-import { Button, makeStyles } from '@material-ui/core';
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import { Button, makeStyles } from "@material-ui/core";
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   btn: {
-  fontSize: "1.8rem",
+    fontSize: "1.8rem",
     //   background: "#833ab4",
     //   background: "-webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)",
     background: "linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)",
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     // transition: "all 0.35s",
     outline: "none",
   },
-  '&::after':{
+  "&::after": {
     position: "absolute",
     content: '" "',
     top: 0,
@@ -30,11 +30,11 @@ const useStyles = makeStyles(theme => ({
     transition: "all 0.35s",
     borderRadius: "4px",
   },
-  '&:hover':{
-    color: "#fff",   //transtions issue pending
+  "&:hover": {
+    color: "#fff", //transtions issue pending
   },
-  '&:hover:not($disabled):not($error):not($focused):after':{
-    width: "100%"
+  "&:hover:not($disabled):not($error):not($focused):after": {
+    width: "100%",
   },
 }));
 
@@ -48,7 +48,7 @@ function ButtonComponent({ className, title, href, ...rest }) {
 }
 
 ButtonComponent.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 export default ButtonComponent;

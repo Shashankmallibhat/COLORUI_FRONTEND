@@ -142,7 +142,7 @@ export default function NavBar() {
       )}
     </Menu>
   );
-//still one error2 exists
+  //still one error2 exists
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu

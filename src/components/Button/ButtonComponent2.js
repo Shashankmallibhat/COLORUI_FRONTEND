@@ -5,9 +5,9 @@ import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '&:hover':{
-        backgroundColor: "#131313"
-    }
+    "&:hover": {
+      backgroundColor: "#131313",
+    },
   },
   btn: {
     color: "#fff",
@@ -26,7 +26,11 @@ const useStyles = makeStyles((theme) => ({
 function ButtonComponent2({ className, title, ...rest }) {
   const classes = useStyles();
   return (
-    <Button className={clsx(classes.btn, classes.root,className)} {...rest} disableElevation>
+    <Button
+      className={clsx(classes.btn, classes.root, className)}
+      {...rest}
+      disableElevation
+    >
       {title}
     </Button>
   );

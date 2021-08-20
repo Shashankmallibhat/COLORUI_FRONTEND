@@ -3,7 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import ScrollReset from "./components/ScrollReset";
 import MainLayout from "./layouts/MainLayout";
 import Footer from "./layouts/MainLayout/Footer";
-// import Colors from "./views/pages/Colors";
+import GradColors from "./views/ColorPages/GradColors";
+import PlainColors from "./views/ColorPages/PlainColors";
+import FlatColors from "./views/ColorPages/FlatColors";
+import CombColors from "./views/ColorPages/CombColors";
 import HomeView from "./views/pages/HomeView";
 import Feature from "./views/pages/HomeView/Feature";
 import Services from "./views/pages/HomeView/Services";
@@ -51,7 +54,13 @@ const renderRoutes = function () {
         )}
       />
       <Route path="/scall" render={(props) => <ScheduleCall {...props} />} />
-      {/* <Route path="/colors" render={(props) => <Colors {...props} />} /> */}
+      <Route path="/gradcolors" render={(props) => <GradColors {...props} />} />
+      <Route
+        path="/plaincolors"
+        render={(props) => <PlainColors {...props} />}
+      />
+      <Route path="/flatcolors" render={(props) => <FlatColors {...props} />} />
+      <Route path="/combcolors" render={(props) => <CombColors {...props} />} />
     </Switch>
   );
 };

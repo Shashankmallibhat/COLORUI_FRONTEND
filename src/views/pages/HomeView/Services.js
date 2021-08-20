@@ -95,7 +95,7 @@ function Services({ className, ...rest }) {
             <Card>
               <h2>Custom Colorways</h2>
               <p>AI Powered technology</p>
-              <Link to="/colors" className={classes.links}>
+              <Link to="/flatcolors" className={classes.links}>
                 <ButtonComponent2 title="Get Started" className={classes.btn} />
               </Link>
             </Card>
@@ -104,7 +104,7 @@ function Services({ className, ...rest }) {
             <Card>
               <h2>Are you Ready?</h2>
               <p>Take the leap</p>
-              <Link to="/colors" className={classes.links}>
+              <Link to="/plaincolors" className={classes.links}>
                 <ButtonComponent2 title="Get Started" className={classes.btn} />
               </Link>
             </Card>

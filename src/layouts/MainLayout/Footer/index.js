@@ -71,17 +71,17 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "#fff",
   },
-  item:{
+  item: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
-  aboutLeftAlign:{
+  aboutLeftAlign: {
     [theme.breakpoints.down("xs")]: {
       position: "relative",
       right: "4rem",
     },
   },
-  followLeftAlign:{
+  followLeftAlign: {
     [theme.breakpoints.down("xs")]: {
       position: "relative",
       right: "7rem",
@@ -104,7 +104,7 @@ function Footer() {
             </Typography>
           </Grid>
 
-          <Grid item className={clsx(classes.item,classes.aboutLeftAlign)}>
+          <Grid item className={clsx(classes.item, classes.aboutLeftAlign)}>
             <List>
               <ListItemText className={classes.footerHeader}>
                 About Us
@@ -159,7 +159,7 @@ function Footer() {
             </List>
           </Grid>
 
-          <Grid item className={clsx(classes.item,classes.followLeftAlign)}>
+          <Grid item className={clsx(classes.item, classes.followLeftAlign)}>
             <List className={classes.socialMediaList}>
               <ListItemText className={classes.footerHeader}>
                 Follow Us
@@ -240,15 +240,6 @@ function Footer() {
               className={classes.footerCopyRightLinks}
             >
               Terms of Use
-            </Link>
-            {" | "}
-
-            <Link
-              color="#fff"
-              to="/refundpolicies"
-              className={classes.footerCopyRightLinks}
-            >
-              Refund &amp; Cancellation Policy
             </Link>
           </Typography>
         </Grid>

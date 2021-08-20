@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, CssBaseline, makeStyles } from "@material-ui/core";
+import { Container, CssBaseline, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
 import { useHistory } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column"
+    flexDirection: "column",
   },
   desc1: {
     color: "#fff",
@@ -97,18 +97,18 @@ function Hero({ className, ...rest }) {
     <>
       <CssBaseline />
       <Container className={classes.container1}>
-          <div className={classes.main}>
-            <h1 className={classes.desc1}>Choose your</h1>
-            <h1 className={classes.highlight}>Colors</h1>
-          </div>
-            <p className={classes.desc2}>Unlimited Possibilites</p>
-          <ButtonComponent
-            title="Explore"
-            className={classes.btn}
-            onClick={() => {
-              history.push("/services");
-            }}
-          />
+        <div className={classes.main}>
+          <h1 className={classes.desc1}>Choose your</h1>
+          <h1 className={classes.highlight}>Colors</h1>
+        </div>
+        <p className={classes.desc2}>Unlimited Possibilites</p>
+        <ButtonComponent
+          title="Explore"
+          className={classes.btn}
+          onClick={() => {
+            history.push("/services");
+          }}
+        />
       </Container>
     </>
   );
