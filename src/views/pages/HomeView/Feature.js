@@ -87,14 +87,15 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     [theme.breakpoints.down("md")]: {
-      height: "10vh",
+      height: "14vh",
     },
     [theme.breakpoints.down("sm")]: {
       margin: "1rem 0",
-      height: "8vh",
+      height: "14vh",
     },
     [theme.breakpoints.down("xs")]: {
       margin: "3rem 0",
+      height: "14vh",
     },
   },
   icon: {

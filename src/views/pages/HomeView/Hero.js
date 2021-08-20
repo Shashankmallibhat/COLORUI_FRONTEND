@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, CssBaseline, makeStyles } from "@material-ui/core";
+import {Container, CssBaseline, makeStyles } from "@material-ui/core";
 import ButtonComponent from "../../../components/Button/ButtonComponent";
 import { useHistory } from "react-router-dom";
 
@@ -16,11 +16,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column"
   },
   desc1: {
     color: "#fff",
-    position: "relative",
-    top: "-0.7em",
     fontSize: "100px",
     marginBottom: "24px",
     [theme.breakpoints.down("sm")]: {
@@ -33,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   highlight: {
-    position: "relative",
-    top: "-0.7em",
     fontSize: "100px",
     marginBottom: "24px",
     marginLeft: "16px",
@@ -62,8 +59,7 @@ const useStyles = makeStyles((theme) => ({
     WebkitTextFillColor: "transparent",
     MozTextFillColor: "transparent",
     position: "relative",
-    top: "-1.3em",
-    right: "-1.4em",
+    alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       fontSize: "70px",
       left: "0",
@@ -74,20 +70,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    top: "-2em",
-    right: "-9.5em",
-    [theme.breakpoints.down("sm")]: {
-      right: "-12rem",
-      top: "-5rem",
-    },
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     [theme.breakpoints.down("xs")]: {
       width: "150px",
-      right: "-100px",
     },
   },
   main: {
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     [theme.breakpoints.down("sm")]: {
       display: "grid",
       gridTemplateColumns: "1fr",
@@ -99,17 +94,14 @@ function Hero({ className, ...rest }) {
   const classes = useStyles();
   const history = useHistory();
   return (
-    <div>
+    <>
       <CssBaseline />
       <Container className={classes.container1}>
-        <Box>
           <div className={classes.main}>
             <h1 className={classes.desc1}>Choose your</h1>
             <h1 className={classes.highlight}>Colors</h1>
           </div>
-          <div>
             <p className={classes.desc2}>Unlimited Possibilites</p>
-          </div>
           <ButtonComponent
             title="Explore"
             className={classes.btn}
@@ -117,9 +109,8 @@ function Hero({ className, ...rest }) {
               history.push("/services");
             }}
           />
-        </Box>
       </Container>
-    </div>
+    </>
   );
 }
 
