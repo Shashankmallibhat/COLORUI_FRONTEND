@@ -87,15 +87,13 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     [theme.breakpoints.down("md")]: {
-      height: "14vh",
+      width: "34vw"
     },
     [theme.breakpoints.down("sm")]: {
       margin: "1rem 0",
-      height: "14vh",
     },
     [theme.breakpoints.down("xs")]: {
       margin: "3rem 0",
-      height: "14vh",
     },
   },
   icon: {
@@ -176,7 +174,7 @@ function Feature({ className, ...rest }) {
           <Grid item xs={4} className={classes.text}>
             <h1>What can we do for you?</h1>
             <h2>We help you to get awesome Colors</h2>
-            <p>Schedule a call learn to more about our services</p>
+            <p>Schedule a call to learn more about our services</p>
             <Link to="/scall" className={classes.links}>
               <ButtonComponent title="Schedeule Call" className={classes.btn} />
             </Link>
