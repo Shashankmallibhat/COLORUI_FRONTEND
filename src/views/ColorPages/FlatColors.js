@@ -11,6 +11,7 @@ import {
 import FlatColorsData from "../../ColorData/FlatColorsData";
 import Footer from "../../layouts/MainLayout/Footer";
 import MainLayout from "../../layouts/MainLayout";
+import '../../index.css';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -44,6 +45,8 @@ const useStyles = makeStyles((theme) => ({
     willChange: "transform, opacity",
     height: "100px",
     cursor: "pointer",
+    alignItems: "center",
+    justifyContent: "center"
   },
   text: {
     textAlign: "center",
@@ -116,8 +119,10 @@ function FlatColors() {
             {transition((style, item) => (
               <animated.div
                 className={classes.item}
-                style={{ ...style, background: item.css }}
-              />
+                style={{ ...style, background: item.css, display:"flex", alignItems: "center", justifyContent: "center" }}
+              > 
+              <h3 className="hexcodes" hexcode={item.description}> </h3>
+              </animated.div>
             ))}
           </animated.div>
         </div>
