@@ -107,7 +107,7 @@ function FlatColors() {
           <animated.div
             style={{ ...rest, width: sizew, height: sizeh, marginTop: marginTop }}
             className={classes.container}
-            onClick={() => setOpen((open) => !open)}
+            onClick={() => setOpen(true)}
           >
             {!open ? (
               <h2 className={classes.text}>
@@ -121,7 +121,7 @@ function FlatColors() {
                 className={classes.item}
                 style={{ ...style, background: item.css, display:"flex", alignItems: "center", justifyContent: "center" }}
               > 
-              <h3 className="hexcodes" hexcode={item.description}> </h3>
+              <h3>{item.description}</h3>
               </animated.div>
             ))}
           </animated.div>
